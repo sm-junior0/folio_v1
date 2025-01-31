@@ -1,0 +1,201 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Noto+Sans:ital@0;1&family=Space+Grotesk:wght@300..700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+@layer base {
+  :root {
+    --background: 255 255 255;
+    --text-primary: 23 23 23;
+  }
+
+  :root[class~="dark"] {
+    --background: 21 21 21;
+    --text-primary: 255 255 255;
+  }
+}
+
+body {
+  font-family: "Space Grotesk", sans-serif;
+  background: rgb(var(--background));
+  color: rgb(var(--text-primary));
+  transition: background-color 0.3s ease;
+}
+body {
+  background-color: white; /* Set a default background color */
+  color: black; /* Set a default text color */
+}
+.education-container {
+  max-width: 800px;
+  margin: 50px auto;
+  text-align: center;
+  background-color: #1e1e2f; /* Dark background */
+  color: #ffffff; /* White text */
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+.education-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #007bff; /* Highlight blue */
+  text-transform: uppercase;
+}
+
+.education-description {
+  font-size: 1.2rem;
+  color: #cfcfcf;
+  margin-bottom: 30px;
+}
+
+.education-card {
+  background-color: #2a2a3c; /* Card background */
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.education-card-title {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #ffffff; /* White for title */
+  margin-bottom: 10px;
+}
+
+.education-card-institution {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #bdbdbd; /* Light gray */
+  margin-bottom: 5px;
+}
+
+.education-card-year {
+  font-size: 1.2rem;
+  color: #bdbdbd; /* Light gray */
+  margin-bottom: 20px;
+}
+
+.education-card-description {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #c7c7c7; /* Softer white */
+}
+
+.carousel-controls {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  gap: 20px;
+}
+
+.carousel-button {
+  background: #007bff; /* Blue button */
+  color: #fff;
+  font-size: 1.5rem;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: transform 0.3s ease, background 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.carousel-button:hover {
+  background: #0056b3; /* Darker blue on hover */
+  transform: scale(1.1);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* Ensure no dark mode styles are applied */
+.dark {
+  background-color: inherit; /* Remove dark mode background */
+  color: inherit; /* Remove dark mode text color */
+}
+span,
+.primary-color {
+  background-image: linear-gradient(to right, #7a0d8a, #c92085, #c68109);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.bg-primary-color {
+  background-image: linear-gradient(to right, #7a0d8a, #c92085, #c68109);
+}
+
+h2 {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+
+@media (min-width: 768px) {
+  h2 {
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+  }
+}
+
+p {
+  font-size: 1.25rem;
+  letter-spacing: -0.025em;
+  line-height: 1.75;
+}
+
+.glass {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+.dark .glass {
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0));
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.shiny-effect {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 1;
+  background: radial-gradient(circle, rgba(122, 91, 41, 0.5), transparent 70%);
+}
+
+.active-project {
+  position: relative;
+}
+
+.active-project::before,
+.active-project::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background-color: #D3208B;
+  bottom: -6px;
+}
+
+.active-project::after {
+  background-color: #FDA000;
+  width: 80%;
+  bottom: -10px;
+}
